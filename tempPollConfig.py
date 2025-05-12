@@ -8,7 +8,7 @@ def get_sheet2():
     try:
         return client.open(SHEET_NAME).worksheet("Temp Msg")
     except gspread.SpreadsheetNotFound:
-        sheet = client.create(SHEET_NAME).sheet2
+        sheet = client.create(SHEET_NAME).worksheet("Temp Msg")
         sheet.append_row(["chat_id", "Question", "Options", "Scheduled Time"])
         return sheet
 

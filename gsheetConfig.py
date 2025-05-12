@@ -2,8 +2,8 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 # ==== CONFIGURATION ====
-SHEET_NAME = "Gsimo Bot Test"
-CREDENTIALS_FILE = "credentials.json"  # Path to your service account file
+SHEET_NAME = "Gsimo Telebot Database"
+CREDENTIALS_FILE = "google_api_credentials.json"  # Path to your service account file
 
 # ==== INIT GOOGLE SHEET ====
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]

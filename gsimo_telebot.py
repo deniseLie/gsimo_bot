@@ -137,10 +137,7 @@ def handle_new_timing(message, changeSummary=True):
         bot.register_next_step_handler(message, handle_new_timing)
         
     # Re-show summary if change timing
-    if changeSummary == 'handle_new_timing':   send_poll_summary(chat_id)  
-
-    
-
+    if changeSummary:   send_poll_summary(chat_id)  
     
 
 # ======= SCHEDULER =======
