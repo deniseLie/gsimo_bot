@@ -6,7 +6,7 @@ import re
 from dotenv import load_dotenv
 from telebot import TeleBot, types
 from datetime import datetime
-from schedulePollGsheet import add_poll, check_due_polls
+from .schedulePollGsheet import add_poll, check_due_polls
 from tempPollConfig import get_user_poll_config, update_user_poll_config
 
 load_dotenv()

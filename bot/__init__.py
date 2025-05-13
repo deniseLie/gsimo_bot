@@ -1,0 +1,1 @@
+from .gsimo_telebot import bot

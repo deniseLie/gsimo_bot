@@ -1,20 +1,18 @@
 import os
 from dotenv import load_dotenv
 from telebot import TeleBot
-from schedulePollGsheet import check_due_polls
+from .schedulePollGsheet import check_due_polls
 
-# ======= ENV =======
+# ===== ENV =====
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-# ======= SETUP TELEGRAM BOT =======
+# ===== SETUP TELEGRAM BOT =====
 bot = TeleBot(BOT_TOKEN)
 
-# ======= CRON JOB - FIND DUE POLL -> SEND =======
 def run_cron_job():
-    
     print("Running scheduled poll check")
     check_due_polls(bot)
-        
+
 if __name__ == "__main__":
     run_cron_job()
