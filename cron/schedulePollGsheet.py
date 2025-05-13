@@ -1,15 +1,8 @@
 import gspread
-import os
 import json
 from datetime import datetime
-from dotenv import load_dotenv
 from gsheetConfig import client, SHEET_NAME
 from gspread_formatting import get_effective_format, format_cell_range, CellFormat, Color
-
-# ==== ENV ====
-load_dotenv()
-SB_CHAT_ID = os.getenv("CHAT_ID")
-SB_TOPIC_ID = os.getenv("TOPIC_ID")
 
 HIGHLIGHT_COLOR = Color(red=0.8, green=1, blue=0.8)  # Light green
 
