@@ -18,7 +18,7 @@ jobs:
         run: |
           mkdir -p gsimo_bot
           printf "%s" "${{ secrets.GOOGLE_API_CREDENTIALS }}" > gsimo_bot/google_api_credentials.json
-          ls -l gsimo_bot/google_api_credentials.json
+          cat gsimo_bot/google_api_credentials.json
 
       - name: Build Docker image
         run: docker build -t telegram-bot .
