@@ -15,7 +15,9 @@ jobs:
         uses: actions/checkout@v4  # Get your code from GitHub
 
       - name: Create google_api_credentials.json
-        run: echo "${{ secrets.GOOGLE_API_CREDENTIALS }}" > google_api_credentials.json
+        run: |
+          echo "${{ secrets.GOOGLE_API_CREDENTIALS }}" > google_api_credentials.json
+          ls -l google_api_credentials.json
 
       - name: Build Docker image
         run: docker build -t telegram-bot .
