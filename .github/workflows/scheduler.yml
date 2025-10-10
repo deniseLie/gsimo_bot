@@ -17,7 +17,7 @@ jobs:
       - name: Create google_api_credentials.json
         run: |
           mkdir -p gsimo_bot
-          echo "${{ secrets.GOOGLE_API_CREDENTIALS }}" > google_api_credentials.json
+          echo "${{ secrets.GOOGLE_API_CREDENTIALS }}" > gsimo_bot/google_api_credentials.json
           ls -l gsimo_bot/google_api_credentials.json
 
       - name: Build Docker image
