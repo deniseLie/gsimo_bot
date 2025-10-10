@@ -20,6 +20,9 @@ jobs:
           printf "%s" "${{ secrets.GOOGLE_API_CREDENTIALS }}" > gsimo_bot/google_api_credentials.json
           cat gsimo_bot/google_api_credentials.json
 
+      - name: Validate JSON
+        run: python -m json.tool gsimo_bot/google_api_credentials.json
+
       - name: Build Docker image
         run: docker build -t telegram-bot .
 
