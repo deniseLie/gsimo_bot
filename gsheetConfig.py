@@ -14,11 +14,6 @@ if not credentials_path or not os.path.exists(credentials_path):
 # Load credentials
 with open(credentials_path, "r") as f:
     credentials_dict = json.load(f)
-
-# Local Test
-# with open("gcredential.json", "r") as f:
-#     credentials_dict = json.load(f)
-
 # LOG
 # print("Looking for credentials:", credentials_dict)
 # print("Exists?", os.path.exists(CREDENTIALS))
