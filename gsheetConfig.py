@@ -6,7 +6,7 @@ from google.oauth2.service_account import Credentials
 
 # ==== CONFIGURATION ====
 SHEET_NAME = "Gsimo Telebot Database"
-credentials_str = os.getenv("GOOGLE_CREDENTIALS_PATH")  # default fallback for local dev
+credentials_path = os.getenv("GOOGLE_CREDENTIALS_PATH")  # default fallback for local dev
 if not credentials_path or not os.path.exists(credentials_path):
     raise RuntimeError(f"Google credentials file not found at {credentials_path}")
 
