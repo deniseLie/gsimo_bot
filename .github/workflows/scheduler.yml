@@ -28,10 +28,10 @@ jobs:
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
           GOOGLE_CREDENTIALS_PATH: ${{ secrets.GOOGLE_CREDENTIALS_PATH }}
         run: docker run --rm \
-              -e BOT_TOKEN \
-              -e CHAT_ID \
-              -e TOPIC_ID \
-              -e GOOGLE_SHEET_ID \
-              -e GOOGLE_CREDENTIALS_PATH \
-              -v ${{ github.workspace }}/google_api_credentials.json:/app/google_api_credentials.json \
+              -e BOT_TOKEN="$BOT_TOKEN" \
+              -e CHAT_ID="$CHAT_ID" \
+              -e TOPIC_ID="$TOPIC_ID" \
+              -e GOOGLE_SHEET_ID="$GOOGLE_SHEET_ID" \
+              -e GOOGLE_CREDENTIALS_PATH="/app/google_api_credentials.json" \
+              -v /home/runner/work/gsimo_bot/gsimo_bot/google_api_credentials.json:/app/google_api_credentials.json \
               telegram-bot
