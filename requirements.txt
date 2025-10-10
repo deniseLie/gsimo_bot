@@ -3,4 +3,3 @@ python-dotenv               # for loading .env files
 oauth2client                # required by gspread for auth
 gspread                     # Google Sheets API
 gspread-formatting          # Google sheet formatting (coloring)
-ZoneInfo
