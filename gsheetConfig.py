@@ -6,8 +6,13 @@ from google.oauth2.service_account import Credentials
 
 # ==== CONFIGURATION ====
 SHEET_NAME = "Gsimo Telebot Database"
-credentials_str = os.getenv("google_api_credentials.json")  # default fallback for local dev
-credentials_dict = json.loads(credentials_str, strict=False)
+credentials_str = os.getenv("GOOGLE_CREDENTIALS_PATH")  # default fallback for local dev
+if not credentials_path or not os.path.exists(credentials_path):
+    raise RuntimeError(f"Google credentials file not found at {credentials_path}")
+
+# Load credentials
+with open(credentials_path, "r") as f:
+    credentials_dict = json.load(f)
 
 # Local Test
 # with open("gcredential.json", "r") as f:
