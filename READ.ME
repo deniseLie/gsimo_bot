@@ -1,0 +1,18 @@
+
+# SECRET
+gcloud secrets create google-api-key --data-file=google_api_credentials.json
+
+gcloud secrets add-iam-policy-binding google-api-key \
+  --member="serviceAccount:146246049749-compute@developer.gserviceaccount.com" \
+  --role="roles/secretmanager.secretAccessor"
+
+# DEPLOY
+gcloud run jobs deploy job-quickstart \
+  --source . \
+  --tasks 1 \
+  --region us-central1 \
+  --project=gsimo-bot
+  
+  --update-secrets google_api_credentials.json=google-api-key:latest
+  --set-env-vars CREDENTIALS_FILE=/var/secrets/google_api_credentials.json \
+  --set-env-vars BOT_TOKEN=1212 \

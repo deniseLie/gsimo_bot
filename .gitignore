@@ -1,3 +1,7 @@
 .env
 google_api_credentials.json
+gcredential.json
+gsimo-telebot-ab01b4a7e2c2.json
 __pycache__/
+.idea/
+.venv/

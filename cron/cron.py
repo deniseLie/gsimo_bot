@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from telebot import TeleBot
-from .schedulePollGsheet import check_due_polls
+from schedulePollGsheet import check_due_polls
 
 # ===== ENV =====
 load_dotenv()

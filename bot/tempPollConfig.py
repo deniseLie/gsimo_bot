@@ -1,14 +1,14 @@
 import gspread
 import json
 from datetime import datetime
-from gsheetConfig import client, SHEET_NAME
+from gsheetConfig import gc, SHEET_NAME
 
 # Create or open the sheet 2
 def get_sheet2():
     try:
-        return client.open(SHEET_NAME).worksheet("Temp Msg")
+        return gc.open(SHEET_NAME).worksheet("Temp Msg")
     except gspread.SpreadsheetNotFound:
-        sheet = client.create(SHEET_NAME).worksheet("Temp Msg")
+        sheet = gc.create(SHEET_NAME).worksheet("Temp Msg")
         sheet.append_row(["chat_id", "Question", "Options", "Scheduled Time"])
         return sheet
 

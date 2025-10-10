@@ -3,7 +3,7 @@ import os
 import json
 from datetime import datetime
 from dotenv import load_dotenv
-from gsheetConfig import client, SHEET_NAME
+from gsheetConfig import gc, SHEET_NAME
 from gspread_formatting import get_effective_format, format_cell_range, CellFormat, Color
 
 # ==== ENV ====
@@ -16,9 +16,9 @@ HIGHLIGHT_COLOR = Color(red=0.8, green=1, blue=0.8)  # Light green
 # Create or open the sheet 1
 def get_sheet1():
     try:
-        return client.open(SHEET_NAME).worksheet("Scheduled")
+        return gc.open(SHEET_NAME).worksheet("Scheduled")
     except gspread.SpreadsheetNotFound:
-        sheet = client.create(SHEET_NAME).sheet1
+        sheet = gc.create(SHEET_NAME).sheet1
         sheet.append_row(["ID", "Chat ID", "Topic ID", "Question", "Options", "Scheduled Time"])
         return sheet
 
