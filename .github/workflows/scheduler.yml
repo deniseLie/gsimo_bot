@@ -33,6 +33,6 @@ jobs:
               -e CHAT_ID="$CHAT_ID" \
               -e TOPIC_ID="$TOPIC_ID" \
               -e GOOGLE_SHEET_ID="$GOOGLE_SHEET_ID" \
-              -e GOOGLE_CREDENTIALS_PATH="/app/google_api_credentials.json" \
-              -v $GITHUB_WORKSPACE/gsimo_bot/google_api_credentials.json:/app/google_api_credentials.json \
+              -e GOOGLE_CREDENTIALS_PATH="/google_api_credentials.json" \
+              -v $GITHUB_WORKSPACE/gsimo_bot/google_api_credentials.json:/google_api_credentials.json \
               telegram-bot
