@@ -17,7 +17,7 @@ jobs:
       - name: Create google_api_credentials.json
         run: |
           mkdir -p gsimo_bot
-          printf "%s" "${{ secrets.GOOGLE_API_CREDENTIALS }}" > gsimo_bot/google_api_credentials.json
+          echo "${{ secrets.GOOGLE_API_CREDENTIALS }}" | sed 's/\\"/"/g' > gsimo_bot/google_api_credentials.json
           cat gsimo_bot/google_api_credentials.json
 
       - name: Validate JSON
