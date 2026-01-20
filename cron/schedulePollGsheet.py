@@ -91,6 +91,7 @@ def check_due_polls(bot):
             highlight_row(sheet_row_index)
         except Exception as e:
             print("send poll fail to chat_id : ", chat_id)
+            print(e)
         
         
     
