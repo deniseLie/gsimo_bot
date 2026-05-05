@@ -39,3 +39,11 @@ jobs:
               -e GOOGLE_CREDENTIALS_PATH="/google_api_credentials.json" \
               -v $GITHUB_WORKSPACE/gsimo_bot/google_api_credentials.json:/google_api_credentials.json:ro \
               telegram-bot
+  keepalive-job:
+    name: Keepalive Workflow
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gautamkrishnar/keepalive-workflow@v2
